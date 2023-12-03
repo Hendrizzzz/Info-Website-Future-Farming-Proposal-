@@ -56,6 +56,7 @@ function handleAboutNavClick(event) {
   initializeSlider1();
   initializeSlider2();
   initializeSlider3();
+  initializeSlider4();
 }
 
 function hideNavbarLinks() {
@@ -66,7 +67,7 @@ function hideNavbarLinks() {
 }
 
 function showContent() {
-  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3'];
+  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4'];
   bodyElements.forEach(elementId => {
     document.getElementById(elementId).style.display = 'block';
   });
@@ -151,6 +152,34 @@ function initializeSlider2() {
   }
 
 
+  function initializeSlider4() {
+    var s = $('.slider.four'),
+        sWrapper = s.find('.slider-wrapper.four'),
+        sItem = s.find('.slide.four'),
+        btn = s.find('.slider-link.four'),
+        sWidth = sItem.width(),
+        sCount = sItem.length,
+        sTotalWidth = sCount * sWidth;
+  
+    sWrapper.css('width', sTotalWidth);
+  
+    var clickCount = 0;
+  
+    btn.on('click', function (e) {
+      e.preventDefault();
+  
+      if ($(this).hasClass('next')) {
+        (clickCount < (sCount - 1)) ? clickCount++ : clickCount = 0;
+      } else if ($(this).hasClass('prev')) {
+        (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
+      }
+  
+      TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) });
+    });
+  }
+  
+
+
 
 
 // Event listener for the "titleButton" button click
@@ -160,7 +189,15 @@ function handleTitleButtonClick(event) {
   hideNavbarLinks1();
   showContents1();
   event.preventDefault(); // Corrected this line
+
+
+  // Scroll to the top with smooth behavior
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
+
 
 function showContents1() {
   const navBarLinks = ['homeContent1', 'homeContent2', 'homeContent3', 'homeContent4', 'team'];
