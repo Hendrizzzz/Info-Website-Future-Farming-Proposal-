@@ -1,0 +1,60 @@
+.body2 {
+    display: none;
+    width: 100% !important;
+    margin: 0;
+    padding: 10%;
+}
+
+.content {    
+    height: 100%;
+    width: 100%;
+    margin: 18% auto 0 auto;
+    box-sizing: border-box; 
+}
+
+.section, .video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    background-color: white;
+    margin-bottom: 10%;
+}
+
+.section h2, .video h2 {
+    font-family: Lalezar;
+    font-size: clamp(0.25rem, 0.1353rem + 3.6691vw, 3.4375rem);
+    color: rgba(79, 64, 64, 1);
+}
+
+.image {
+    border: 3px solid rgba(79, 64, 64, 1);
+    width: 40%;
+    margin: 0 auto 10% auto;
+    max-width: 100%; 
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video video{
+    width: 80%;
+    margin-bottom: 15%;
+}
+
+@media screen and (max-width: 150px) {
+    .content {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (min-width: 151px) and (max-width: 768px) {
+    .content {
+        margin-top: 25%;
+    }
+}

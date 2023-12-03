@@ -57,6 +57,7 @@ body{
     top: 0;
     transition: transform 0.3s;
     transform: translateY(0); /* Initial position */
+    padding: 5% 0;
 }
 
 .navbar--hidden {
@@ -199,6 +200,7 @@ body{
 
 .slide-image {
     height: 24vw;
+    display: flex;
 }
 
 .slide-image img {
@@ -282,10 +284,9 @@ body{
     right: 0;
 }
 
-#aboutContent1, #aboutContent2, #aboutContent3, #aboutContent4{
+#aboutContent1, #aboutContent2, #aboutContent3, #aboutContent4, #homeNav{
     display: none;
 }
-
 
 
 
@@ -328,6 +329,21 @@ footer p {
 
 
 
+@media (max-width: 475px){
+     #title-button{
+        font-size: 23px !important;
+    }
+
+    #title-button span{
+        font-size: 12px !important;
+    }
+
+    navbar button{
+        width: 10px !important;
+    }
+}
+
+
 
 
 /* Extra Small Devices*/
@@ -340,6 +356,11 @@ footer p {
 
     .title-and-tagline{
         text-align: center;
+    }
+
+    .navbar a img{
+        width: 40px !important;
+        height: 30px !important;
     }
 
     .title{
@@ -426,6 +447,11 @@ footer p {
 
     }
 
+    .navbar a img{
+        width: 45px !important;
+        height: 35px !important;
+    }
+
     .taglines{
         margin-top: 5%;
     }
@@ -456,6 +482,12 @@ footer p {
 
 
 @media (max-width: 767px){
+    nav{
+        display: flex;
+        align-items: center;
+    }
+
+
     .introduction-title{
         font-size: clamp(0.5rem, 0.3605rem + 4.463vw, 2.5rem);
     }
@@ -496,6 +528,11 @@ footer p {
     }
 
     .title{
+    }
+
+    .navbar a img{
+        width: 45px !important;
+        height: 35px !important;
     }
 
     .taglines{

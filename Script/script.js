@@ -60,14 +60,14 @@ function handleAboutNavClick(event) {
 }
 
 function hideNavbarLinks() {
-  const navBarLinks = ['homeContent1', 'homeContent2', 'homeContent3', 'homeContent4', 'team'];
+  const navBarLinks = ['homeContent1', 'homeContent2', 'homeContent3', 'homeContent4', 'team', 'body2'];
   navBarLinks.forEach(linkId => {
     document.getElementById(linkId).style.display = 'none';
   });
 }
 
 function showContent() {
-  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4'];
+  const bodyElements = ['homeNav','aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4'];
   bodyElements.forEach(elementId => {
     document.getElementById(elementId).style.display = 'block';
   });
@@ -184,6 +184,7 @@ function initializeSlider2() {
 
 // Event listener for the "titleButton" button click
 document.getElementById('title-button').addEventListener('click', handleTitleButtonClick);
+document.getElementById('homeNav').addEventListener('click', handleTitleButtonClick);
 
 function handleTitleButtonClick(event) {
   hideNavbarLinks1();
@@ -207,10 +208,71 @@ function showContents1() {
 }
 
 function hideNavbarLinks1() {
-  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3'];
+  const bodyElements = ['homeNav','aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4', 'body2'];
   bodyElements.forEach(elementId => {
     document.getElementById(elementId).style.display = 'none';
   });
 }
 
+
+
+$(document).ready(function () {
+  // Event listener for document clicks
+  $(document).on('click', function (e) {
+      // Check if the clicked element is not part of the navbar
+      if (!$(e.target).closest('.navbar').length) {
+          // Close the navbar by removing the 'show' class
+          $('.navbar-collapse').removeClass('show');
+      }
+  });
+
+  // Event listener for clicks on navbar toggler button
+  $('.navbar-toggler').on('click', function (e) {
+      // Prevent the document click event from triggering immediately
+      e.stopPropagation();
+  });
+
+  // Event listener for clicks on navigation links
+  $('.navbar-nav a').on('click', function () {
+      // Close the navbar by removing the 'show' class
+      $('.navbar-collapse').removeClass('show');
+  });
+});
 //comment
+
+
+
+// Event listener for the "titleButton" button click
+document.getElementById('mock-upNav').addEventListener('click', handleMockupButtonClick);
+
+function handleMockupButtonClick(event) {
+  hideNavbarLinks2();
+  showContents2();
+  event.preventDefault(); 
+
+
+  // Scroll to the top with smooth behavior
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
+function showContents2() {
+  const navBarLinks = ['body2'];
+  navBarLinks.forEach(linkId => {
+    document.getElementById(linkId).style.display = 'block';
+  });
+}
+
+function hideNavbarLinks2() {
+  const bodyElements = [
+                        'homeContent1', 'homeContent2', 'homeContent3', 
+                        'homeContent4', 'team', 'aboutContent1', 
+                        'aboutContent2', 'aboutContent3', 'aboutContent4'
+                      ];
+  bodyElements.forEach(elementId => {
+    document.getElementById(elementId).style.display = 'none';
+  });
+}
