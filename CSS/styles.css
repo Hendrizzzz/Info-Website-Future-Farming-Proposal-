@@ -19,11 +19,6 @@
     --font-size2: 20px;
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-}
-
 body{
     background-color: whitesmoke;
     padding-top: 100px !important;
@@ -64,6 +59,7 @@ body{
     transform: translateY(-100%); /* Move up to hide */
 }
 
+
 .navbar-brand{
     color: var(--font-color-green) !important;
     font-family: Prosto-One;
@@ -72,6 +68,10 @@ body{
 .navbar-brand:hover, .navbar-brand:active, .navbar-brand:after{
     color: var(--font-color-green);
     cursor: pointer;
+}
+
+body h5{
+    font-family: Montserrat-Bold !important;
 }
 
 .all-out-seson-content{
@@ -91,6 +91,10 @@ body{
 
 .text{
     margin: 50% 0;
+}
+
+h2{
+    font-family:  Montserrat-Bold;
 }
 
 .navbar-toggler{
@@ -142,6 +146,10 @@ body{
     font-size: 40px;
 }
 
+.carousel.slide{
+    background-color: white;
+}
+
 .holder{
     margin-top: 200px;
     overflow: hidden;
@@ -166,6 +174,15 @@ body{
 /*Home page -> content -> right and left text*/
 .content{
     color: var(--font-color-green);
+}
+
+
+.teamImage{
+    width: 94%;
+}
+
+.row-1, .row-2{
+    margin: 0 !important;
 }
 
 
@@ -204,21 +221,22 @@ body{
 }
 
 .slide-image img {
-    width: 24vw; 
+    width: 100%; 
     cursor: pointer;
     top: 10%;
 }
 
 .slide-content {
-    width: 45vw; 
+    width: 80vw; 
     color: #009955; 
-    margin: 0 10%;
+    margin: 0 10%; /* Increase the right margin as needed */
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 
 .slide-title {
     font-family: Prosto-One;
@@ -289,7 +307,9 @@ body{
 }
 
 
-
+.hahaha{
+    padding: none !important;
+}
 
 
 footer{
@@ -327,9 +347,36 @@ footer p {
 }
 
 
+@media (max-width: 248px) {
+    .navbar-brand.fs-2 {
+        font-size: 14px; /* Adjust the font size as needed */
+    }
+}
 
 
-@media (max-width: 475px){
+@media (max-width: 295px) {
+    #title-button .title-image {
+        display: none; /* Hide the logo */
+    }
+}
+
+
+@media (max-width: 419px){
+    #title-button{
+        font-size: 20px !important;
+    }
+
+   #title-button span{
+        display: none;
+    }
+
+    .navbar-toggler {
+        font-size: 10px !important; 
+    }
+}
+
+
+@media (min-width: 420px) and (max-width: 480px){
      #title-button{
         font-size: 23px !important;
     }
@@ -338,8 +385,8 @@ footer p {
         font-size: 12px !important;
     }
 
-    navbar button{
-        width: 10px !important;
+    .navbar-toggler {
+        font-size: 1rem; /* Adjust the font size as needed */
     }
 }
 
@@ -403,6 +450,10 @@ footer p {
 
     .picture-and-name:last-child{
         margin-bottom: 100px;
+    }
+
+    #team h5{
+        font-size: clamp(0.3125rem, 0.2232rem + 2.8571vw, 1.25rem) !important;
     }
 
     .row-1, .row-2{
@@ -588,3 +639,5 @@ footer p {
         font-size: 25px;
     }
 }
+
+
