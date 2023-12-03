@@ -393,10 +393,17 @@ footer p {
         display: flex;
         flex-direction: column !important;
         justify-content: center;
+        width: 100%;
     }
 
     .slide-content{
-        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 70vw;
+        margin: 0;
     }
 
     .slide-image{
