@@ -78,7 +78,7 @@ function initializeSlider1() {
       sWrapper = s.find('.slider-wrapper.one'),
       sItem = s.find('.slide.one'),
       btn = s.find('.slider-link.one'),
-      sWidth = sItem.width(),
+      sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
       sCount = sItem.length,
       sTotalWidth = sCount * sWidth;
 
@@ -104,7 +104,7 @@ function initializeSlider2() {
         sWrapper = s.find('.slider-wrapper.two'),
         sItem = s.find('.slide.two'),
         btn = s.find('.slider-link.two'),
-        sWidth = sItem.width(),
+        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
         sCount = sItem.length,
         sTotalWidth = sCount * sWidth;
   
@@ -130,7 +130,7 @@ function initializeSlider2() {
         sWrapper = s.find('.slider-wrapper.three'),
         sItem = s.find('.slide.three'),
         btn = s.find('.slider-link.three'),
-        sWidth = sItem.width(),
+        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
         sCount = sItem.length,
         sTotalWidth = sCount * sWidth;
   
@@ -157,7 +157,7 @@ function initializeSlider2() {
         sWrapper = s.find('.slider-wrapper.four'),
         sItem = s.find('.slide.four'),
         btn = s.find('.slider-link.four'),
-        sWidth = sItem.width(),
+        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
         sCount = sItem.length,
         sTotalWidth = sCount * sWidth;
   

@@ -89,6 +89,21 @@ body h5{
     transform: translateY(0);
 }
 
+.carousel-item {
+    height: 300px; /* Set the desired height for your images */
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
 .text{
     margin: 50% 0;
 }
@@ -181,8 +196,12 @@ h2{
     width: 94%;
 }
 
-.row-1, .row-2{
-    margin: 0 !important;
+#team{
+    margin-bottom: 20%;
+}
+
+.row-2{
+    margin-top: 8%;
 }
 
 
@@ -195,6 +214,10 @@ h2{
     padding-bottom: 10%;
     width: 100%;
     background-color: white;
+}
+
+.slide{
+    margin-right: 50px;
 }
 
 .flex {
@@ -229,7 +252,7 @@ h2{
 .slide-content {
     width: 80vw; 
     color: #009955; 
-    margin: 0 10%; /* Increase the right margin as needed */
+    margin: 0 20%; /* Increase the right margin as needed */
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -599,6 +622,10 @@ footer p {
         top: 10%;
     }
 
+    .row.content h2{
+        font-size: 20px;
+    }
+
 }
 
 
@@ -611,6 +638,10 @@ footer p {
 
     .slide-image{
         top: 10% Imp !important;
+    }
+
+    .row.content h2{
+        font-size: 25px;
     }
 
 }
