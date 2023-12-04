@@ -89,6 +89,16 @@ body h5{
     transform: translateY(0);
 }
 
+
+/* Override Bootstrap carousel control icon colors */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #009955;
+}
+
+
+
+
 .carousel-item {
     height: 300px; /* Set the desired height for your images */
 }
