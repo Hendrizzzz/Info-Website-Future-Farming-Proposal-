@@ -41,6 +41,9 @@ function initializeTyped() {
 // Event listener for the "about" button click
 document.getElementById('aboutNav').addEventListener('click', handleAboutNavClick);
 
+// Add event listener for window resize
+window.addEventListener('resize', handleResize);
+
 function handleAboutNavClick(event) {
   hideNavbarLinks();
   showContent();
@@ -52,11 +55,11 @@ function handleAboutNavClick(event) {
     behavior: 'smooth'
   });
 
-  // Initialize the slider after making it visible
-  initializeSlider1();
-  initializeSlider2();
-  initializeSlider3();
-  initializeSlider4();
+  // Initialize the sliders after making them visible
+  initializeSlider('.slider.one');
+  initializeSlider('.slider.two');
+  initializeSlider('.slider.three');
+  initializeSlider('.slider.four');
 }
 
 function hideNavbarLinks() {
@@ -67,22 +70,31 @@ function hideNavbarLinks() {
 }
 
 function showContent() {
-  const bodyElements = ['homeNav','aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4'];
+  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4'];
   bodyElements.forEach(elementId => {
     document.getElementById(elementId).style.display = 'block';
   });
 }
 
-function initializeSlider1() {
-  var s = $('.slider.one'),
-      sWrapper = s.find('.slider-wrapper.one'),
-      sItem = s.find('.slide.one'),
-      btn = s.find('.slider-link.one'),
-      sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
-      sCount = sItem.length,
-      sTotalWidth = sCount * sWidth;
+function initializeSlider(sliderSelector) {
+  var s = $(sliderSelector),
+      sWrapper = s.find('.slider-wrapper'),
+      sItem = s.find('.slide'),
+      btn = s.find('.slider-link'),
+      sCount = sItem.length;
 
-  sWrapper.css('width', sTotalWidth);
+  function setSliderWidth() {
+    var sWidth = sItem.outerWidth(true),
+        sTotalWidth = sCount * sWidth;
+
+    sWrapper.css('width', sTotalWidth);
+  }
+
+  // Set initial slider width
+  setSliderWidth();
+
+  // Update slider width on window resize
+  window.addEventListener('resize', setSliderWidth);
 
   var clickCount = 0;
 
@@ -95,89 +107,19 @@ function initializeSlider1() {
       (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
     }
 
-    TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) });
+    TweenMax.to(sWrapper, 0.6, { x: '-' + (sItem.outerWidth(true) * clickCount) });
   });
 }
 
-function initializeSlider2() {
-    var s = $('.slider.two'),
-        sWrapper = s.find('.slider-wrapper.two'),
-        sItem = s.find('.slide.two'),
-        btn = s.find('.slider-link.two'),
-        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
-        sCount = sItem.length,
-        sTotalWidth = sCount * sWidth;
-  
-    sWrapper.css('width', sTotalWidth);
-  
-    var clickCount = 0;
-  
-    btn.on('click', function (e) {
-      e.preventDefault();
-  
-      if ($(this).hasClass('next')) {
-        (clickCount < (sCount - 1)) ? clickCount++ : clickCount = 0;
-      } else if ($(this).hasClass('prev')) {
-        (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
-      }
-  
-      TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) });
-    });
-  }
+// Function to handle window resize
+function handleResize() {
+  // Recalculate and update the sliders on window resize
+  initializeSlider('.slider.one');
+  initializeSlider('.slider.two');
+  initializeSlider('.slider.three');
+  initializeSlider('.slider.four');
+}
 
-  function initializeSlider3() {
-    var s = $('.slider.three'),
-        sWrapper = s.find('.slider-wrapper.three'),
-        sItem = s.find('.slide.three'),
-        btn = s.find('.slider-link.three'),
-        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
-        sCount = sItem.length,
-        sTotalWidth = sCount * sWidth;
-  
-    sWrapper.css('width', sTotalWidth);
-  
-    var clickCount = 0;
-  
-    btn.on('click', function (e) {
-      e.preventDefault();
-  
-      if ($(this).hasClass('next')) {
-        (clickCount < (sCount - 1)) ? clickCount++ : clickCount = 0;
-      } else if ($(this).hasClass('prev')) {
-        (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
-      }
-  
-      TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) });
-    });
-  }
-
-
-  function initializeSlider4() {
-    var s = $('.slider.four'),
-        sWrapper = s.find('.slider-wrapper.four'),
-        sItem = s.find('.slide.four'),
-        btn = s.find('.slider-link.four'),
-        sWidth = sItem.outerWidth(true), // Use outerWidth to include margins
-        sCount = sItem.length,
-        sTotalWidth = sCount * sWidth;
-  
-    sWrapper.css('width', sTotalWidth);
-  
-    var clickCount = 0;
-  
-    btn.on('click', function (e) {
-      e.preventDefault();
-  
-      if ($(this).hasClass('next')) {
-        (clickCount < (sCount - 1)) ? clickCount++ : clickCount = 0;
-      } else if ($(this).hasClass('prev')) {
-        (clickCount > 0) ? clickCount-- : (clickCount = sCount - 1);
-      }
-  
-      TweenMax.to(sWrapper, 0.4, { x: '-' + (sWidth * clickCount) });
-    });
-  }
-  
 
 
 
@@ -208,7 +150,7 @@ function showContents1() {
 }
 
 function hideNavbarLinks1() {
-  const bodyElements = ['homeNav','aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4', 'body2'];
+  const bodyElements = ['aboutContent1', 'aboutContent2', 'aboutContent3', 'aboutContent4', 'body2'];
   bodyElements.forEach(elementId => {
     document.getElementById(elementId).style.display = 'none';
   });
@@ -242,10 +184,10 @@ $(document).ready(function () {
 
 
 
-// Event listener for the "titleButton" button click
-document.getElementById('mock-upNav').addEventListener('click', handleMockupButtonClick);
+// Event listener for the "MockUpButton" button click
+document.getElementById('mock-upNav').addEventListener('click', handleMockUpButtonClick);
 
-function handleMockupButtonClick(event) {
+function handleMockUpButtonClick(event) {
   hideNavbarLinks2();
   showContents2();
   event.preventDefault(); 
@@ -276,3 +218,23 @@ function hideNavbarLinks2() {
     document.getElementById(elementId).style.display = 'none';
   });
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all the nav links
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  // Add click event listener to each nav link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      // Remove 'active' class from all nav links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add 'active' class to the clicked nav link
+      this.classList.add('active');
+    });
+  });
+});

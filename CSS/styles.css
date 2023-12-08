@@ -131,19 +131,15 @@ h2{
     margin: 0; /* Adjust this value as needed */
 }
 
-.collapse ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: var(--font-color-green);
-    bottom: 0;
-    left: 6px;
-    transition: width 0.3s ease; /* Add transition effect */
+.collapse ul.navbar-nav .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
 
-.collapse ul li a:hover::after {
-    width: 110%;
+.collapse ul.navbar-nav .nav-link.active,
+.collapse ul.navbar-nav .nav-link:hover {
+    background-color: #009955;
+    color: white !important;
+    border-radius: 15px;
 }
 
 .title-logo{
@@ -171,10 +167,6 @@ h2{
     font-size: 40px;
 }
 
-.carousel.slide{
-    background-color: white;
-}
-
 .holder{
     margin-top: 200px;
     overflow: hidden;
@@ -182,7 +174,7 @@ h2{
 
 .content.box{
     background-color: white;
-    padding: 0 50px !important;
+    padding: 0 100px !important;
 }
 
 .waterscreen-image {
@@ -214,6 +206,23 @@ h2{
     margin-top: 8%;
 }
 
+.content.one {
+    line-height: 2.5;
+}
+
+/* Add this to your existing CSS or adjust accordingly */
+
+
+.slide-text h5 {
+    line-height: 2; /* Adjust the value as needed */
+}
+
+
+
+.content.one.right{
+    margin-bottom: 50px;
+}
+
 
 
 
@@ -227,8 +236,9 @@ h2{
 }
 
 .slide{
-    margin-right: 50px;
+    margin-right: 200px;
 }
+
 
 .flex {
     display: -webkit-flex; 
@@ -248,21 +258,32 @@ h2{
     margin: 10% 0 10% 15%;
 }
 
+
+
+/* Optional: To center the image within its container */
 .slide-image {
-    height: 24vw;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Add or modify this CSS rule */
+.slide img {
+    max-width: 100%;
+    height: auto;
 }
 
 .slide-image img {
-    width: 100%; 
     cursor: pointer;
-    top: 10%;
+    /* top: 10%; */ /* Remove this line to center the image vertically */
 }
 
 .slide-content {
     width: 80vw; 
     color: #009955; 
-    margin: 0 20%; /* Increase the right margin as needed */
+    margin: 0 20%; 
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -282,10 +303,13 @@ h2{
 
 .slide-text {
     font-family: Lalezar;
-    font-size: 0.80vw; 
     line-height: 1.2vw; 
     opacity: 0.8; 
     padding-bottom: 4vw;
+}
+
+.content.one, .slide-text{
+    font-size: 20px !important; 
 }
 
 
@@ -335,13 +359,24 @@ h2{
     right: 0;
 }
 
-#aboutContent1, #aboutContent2, #aboutContent3, #aboutContent4, #homeNav{
+#aboutContent1, #aboutContent2, #aboutContent3, #aboutContent4{
     display: none;
 }
 
 
 .hahaha{
     padding: none !important;
+}
+
+#FAQ-title{
+    font-family: Montserrat-Bold !important;
+    margin-bottom: 50px;
+}
+
+
+.fullscreen{
+    height: 100vh;
+    padding: 7% 0;
 }
 
 
@@ -380,6 +415,7 @@ footer p {
 }
 
 
+
 @media (max-width: 248px) {
     .navbar-brand.fs-2 {
         font-size: 14px; /* Adjust the font size as needed */
@@ -406,6 +442,20 @@ footer p {
     .navbar-toggler {
         font-size: 10px !important; 
     }
+
+    .content.one{
+        margin: 10% 0;
+        font-size: 18px !important;
+    }
+    .slide-title h2{
+        font-size: 20px;
+    }
+
+    .slide-text h5{
+        font-size: 18px !important;
+    }
+
+
 }
 
 
@@ -420,6 +470,14 @@ footer p {
 
     .navbar-toggler {
         font-size: 1rem; /* Adjust the font size as needed */
+    }
+
+    .slide-title h2{
+        font-size: 20px;
+    }
+
+    .content.one, .slide-text h5{
+        font-size: 18px !important;
     }
 }
 
@@ -494,30 +552,12 @@ footer p {
         margin-top: 0 !important;
     }
 
-    .slide{
-        display: flex;
-        flex-direction: column !important;
-        justify-content: center;
-        width: 100%;
+    .title-and-tagline{
+        height: auto;
     }
 
-    .slide-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 70vw;
-        margin: 0;
-    }
-
-    .slide-image{
-        display: flex;
-        justify-content: center;
-    }
-
-    .slide-title{
-        text-align: center;
+    .content.box{
+        padding: 0 5% !important;
     }
 }
 
@@ -525,10 +565,6 @@ footer p {
 @media (min-width: 576px) and (max-width: 767px){
     body{
         margin-top: 110px!important;
-    }
-
-    .title{
-
     }
 
     .navbar a img{
@@ -558,9 +594,6 @@ footer p {
         padding: 0;
     }
 
-    .slide-image{
-        top: 10%;
-    }
 }
 
 
@@ -628,32 +661,75 @@ footer p {
         padding: 0;
     }
 
-    .slide-image{
-        top: 10%;
-    }
 
     .row.content h2{
         font-size: 20px;
     }
 
+    .home-title{
+        font-size: 45px;
+    }
+
+
 }
+
+@media (max-width: 991px) {
+    .collapse.navbar-collapse ul.navbar-nav .nav-link {
+        padding: 10px 15px; 
+        text-align: left;
+        transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+        width: fit-content;
+    }
+
+}
+
 
 
 /* Large Devices */
 @media (min-width: 992px) and (max-width: 1199px){
     .slide-content{
-        margin: 0 10% !important;
+        margin: 0% !important;
         padding: 0 !important;
     }
 
-    .slide-image{
-        top: 10% Imp !important;
-    }
+
 
     .row.content h2{
         font-size: 25px;
     }
 
+    .home-title{
+        font-size: 45px;
+    }
+
+}
+
+@media (max-width: 1199px){
+    .slide{
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .slide-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 70vw !important;
+        margin: 0% !important;
+    }
+
+    .slide-image{
+        display: flex;
+        justify-content: center;
+    }
+
+    .slide-title{
+        text-align: center;
+    }
 }
 
 /* Extra Large Devices*/
@@ -665,6 +741,10 @@ footer p {
 
     .slide-image{
         top: 10%;
+    }
+
+    .home-title{
+        font-size: 50px;
     }
 
 }
