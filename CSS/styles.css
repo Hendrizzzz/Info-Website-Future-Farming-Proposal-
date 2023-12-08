@@ -96,15 +96,20 @@ body h5{
     background-color: #009955;
 }
 
-
-
-
 .carousel-item {
     height: 300px; /* Set the desired height for your images */
 }
 
 .carousel-inner {
     height: 100%;
+}
+
+.carousel-inner p, .carousel-inner h2{
+    color: #009955;
+}
+
+.carousel-inner p{
+    font-family: Montserrat-Bold;
 }
 
 .carousel-item img {
