@@ -238,3 +238,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var backToTopButton = document.getElementById('backToTopBtn');
+
+  // Show or hide the button based on scroll position
+  window.onscroll = function () {
+      var scrollPosition = window.scrollY;
+      var windowHeight = window.innerHeight;
+      var bodyHeight = document.body.offsetHeight;
+
+      if (scrollPosition > windowHeight / 2 && scrollPosition + windowHeight >= bodyHeight - 100) {
+          document.body.classList.add('near-footer');
+      } else {
+          document.body.classList.remove('near-footer');
+      }
+
+      // Check if the user scrolled more than 20 pixels to show or hide the button
+      if (scrollPosition > 20) {
+          backToTopButton.style.display = 'block';
+      } else {
+          backToTopButton.style.display = 'none';
+      }
+  };
+
+  // Smoothly scroll to the top when the 'arrow up' button is clicked
+  backToTopButton.onclick = function () {
+      document.body.scrollIntoView({ behavior: 'smooth' });
+  };
+});
