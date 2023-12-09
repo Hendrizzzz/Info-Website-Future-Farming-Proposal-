@@ -693,8 +693,6 @@ footer p {
         margin-top: 110px!important;
     }
 
-    .title{
-    }
 
     .navbar a img{
         width: 45px !important;
@@ -730,6 +728,16 @@ footer p {
         width: fit-content;
     }
 
+    .arrow {
+        border-top: 0.35vw solid #009955 !important; 
+        border-left: 0.35vw solid #009955 !important; 
+    }
+
+    .arrow:hover {
+        border-color: rgba(79, 64, 64, 1) !important; 
+        border-width: 0.45vw !important;
+    }
+
 }
 
 
@@ -749,6 +757,16 @@ footer p {
 
     .home-title{
         font-size: 45px;
+    }
+
+    .arrow {
+        border-top: 0.25vw solid #009955; 
+        border-left: 0.25vw solid #009955; 
+    }
+
+    .arrow:hover {
+        border-color: rgba(79, 64, 64, 1); 
+        border-width: 0.35vw;
     }
 
 }
