@@ -37,10 +37,9 @@ body{
 }
 
 .navbar-nav .nav-item {
-    margin-right: 50px; /* Adjust the value as needed */
+    margin-right: 50px; 
 }
 
-/* Optional: To remove margin from the last item */
 .navbar-nav .nav-item:last-child {
     margin-right: 30;
 }
@@ -51,14 +50,13 @@ body{
     margin: 0;
     top: 0;
     transition: transform 0.3s;
-    transform: translateY(0); /* Initial position */
+    transform: translateY(0);
     padding: 5% 0;
 }
 
 .navbar--hidden {
-    transform: translateY(-100%); /* Move up to hide */
+    transform: translateY(-100%); 
 }
-
 
 .navbar-brand{
     color: var(--font-color-green) !important;
@@ -78,17 +76,14 @@ body h5{
     background-color: white;
 }
 
-/* Add a class for the hidden state */
 .navbar--hidden {
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
 }
 
-/* Optionally, you can add some styles for the visible state */
 .navbar--hidden:hover {
     transform: translateY(0);
 }
-
 
 /* Override Bootstrap carousel control icon colors */
 .carousel-control-prev-icon,
@@ -97,7 +92,7 @@ body h5{
 }
 
 .carousel-item {
-    height: 300px; /* Set the desired height for your images */
+    height: 300px; 
 }
 
 .carousel-inner {
@@ -117,7 +112,6 @@ body h5{
     width: 100%;
     height: 100%;
 }
-
 
 .text{
     margin: 50% 0;
@@ -183,9 +177,11 @@ h2{
 }
 
 .waterscreen-image {
-    width: 100%; /* Adjust the width as needed */
-    max-width: none; /* Remove the max-width constraint if needed */
+    width: 100%; 
+    max-width: none; 
 }
+
+
 /*Home page -> content -> content-title*/
 .home-title{
     color: var(--font-color-green);
@@ -197,7 +193,6 @@ h2{
 .content{
     color: var(--font-color-green);
 }
-
 
 .teamImage{
     width: 94%;
@@ -215,159 +210,17 @@ h2{
     line-height: 2.5;
 }
 
-/* Add this to your existing CSS or adjust accordingly */
-
-
 .slide-text h5 {
-    line-height: 2; /* Adjust the value as needed */
+    line-height: 2; 
 }
-
-
 
 .content.one.right{
     margin-bottom: 50px;
 }
 
-
-
-
-
-.slider{
-    overflow: hidden;
-    margin-bottom: 20%;
-    padding-bottom: 10%;
-    width: 100%;
-    background-color: white;
-}
-
-.slide{
-    margin-right: 200px;
-}
-
-
-.flex {
-    display: -webkit-flex; 
-    display: flex; 
-    -webkit-flex-direction: row;  
-    flex-direction: row; 
-    -webkit-justify-content: flex-start; 
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.slider-wrapper div {
-    position: relative;
-}
-
-.slider-wrapper {
-    margin: 10% 0 10% 15%;
-}
-
-
-
-/* Optional: To center the image within its container */
-.slide-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-/* Add or modify this CSS rule */
-.slide img {
-    max-width: 100%;
-    height: auto;
-}
-
-.slide-image img {
-    cursor: pointer;
-    /* top: 10%; */ /* Remove this line to center the image vertically */
-}
-
-.slide-content {
-    width: 80vw; 
-    color: #009955; 
-    margin: 0 20%; 
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.slide-title {
-    font-family: Prosto-One;
-    font-size: 1.2vw; 
-    font-weight: 400; 
-    letter-spacing: 0.1vw; 
-    line-height: 1.55vw; 
-    padding-bottom: 1.8vw;
-}
-
-.slide-text {
-    font-family: Lalezar;
-    line-height: 1.2vw; 
-    opacity: 0.8; 
-    padding-bottom: 4vw;
-}
-
-.content.one, .slide-text{
-    font-size: 20px !important; 
-}
-
-
-.arrows{
-    width: 3.5vw; 
-    margin-top: -5.8vw; 
-    margin-left: 72vw; 
-    position: relative;
-}
-
-.arrow {
-    display: inline-block; 
-    position: absolute; 
-    width: 1.2vw; 
-    height: 1.2vw; 
-    background: transparent; 
-    text-indent: -9999px; 
-    border-top: 0.15vw solid #009955; 
-    border-left: 0.15vw solid #009955; 
-    transition: all .1s ease-in-out; 
-    text-decoration: none; 
-    color: transparent;
-}
-
-.arrow:hover {
-    border-color: #0A8ACB; 
-    border-width: 0.25vw;
-}
-
-.arrow:before {
-    display: block; 
-    height: 200%; 
-    width: 200%; 
-    margin-left: -50%; 
-    margin-top: -50%; 
-    content: ""; 
-    transform: rotate(45deg);
-}
-
-.arrow.prev {
-    transform: rotate(-45deg); 
-    left: 0;
-}
-
-.arrow.next {
-    transform: rotate(135deg); 
-    right: 0;
-}
-
 #aboutContent1, #aboutContent2, #aboutContent3, #aboutContent4{
     display: none;
 }
-
 
 .hahaha{
     padding: none !important;
@@ -378,12 +231,10 @@ h2{
     margin-bottom: 50px;
 }
 
-
 .fullscreen{
     height: 100vh;
     padding: 7% 0;
 }
-
 
 /* Style for the back-to-top button */
 #backToTopBtn {
@@ -403,16 +254,6 @@ h2{
     height: 6%;
 }
 
-@media (max-width: 768px) {
-    /* Adjust styles for smaller screens */
-    #backToTopBtn {
-        width: 10%;
-        height: auto;
-        font-size: 16px;
-        padding: 8px;
-    }
-}
-
 #backToTopBtn:hover {
     background-color: rgb(0, 153, 85);
 }
@@ -422,7 +263,6 @@ body.reached-footer #backToTopBtn {
     background-color: #009955;
     color: white;
 }
-
 
 footer{
     background-color: rgba(79, 64, 64, 1);
@@ -462,14 +302,14 @@ footer p {
 
 @media (max-width: 248px) {
     .navbar-brand.fs-2 {
-        font-size: 14px; /* Adjust the font size as needed */
+        font-size: 14px; 
     }
 }
 
 
 @media (max-width: 295px) {
     #title-button .title-image {
-        display: none; /* Hide the logo */
+        display: none; 
     }
 }
 
@@ -576,12 +416,12 @@ footer p {
 
     .hahaha img,
     .holder img {
-        padding: 15% !important; /* Adjust the margin value as needed */
+        padding: 15% !important; 
         margin-bottom: 0 !important;
     }
 
     .holder img {
-        margin: 10px; /* Adjust the margin value as needed */
+        margin: 10px;
     }
 
     .holder h5{
@@ -609,6 +449,7 @@ footer p {
         padding: 0 5% !important;
     }
 }
+
 
 /* Small Devices */
 @media (min-width: 576px) and (max-width: 767px){
@@ -642,11 +483,10 @@ footer p {
         margin: 0 10%;
         padding: 0;
     }
-
 }
 
 
-
+/* Responsive Font Size for small to extra small devices*/
 @media (max-width: 767px){
     nav{
         display: flex;
@@ -685,14 +525,21 @@ footer p {
     .footer-subtitle{
         font-size: clamp(0.3125rem, 0.2689rem + 1.3947vw, 0.9375rem);
     }
+
+    #backToTopBtn {
+        width: 10%;
+        height: auto;
+        font-size: 16px;
+        padding: 8px;
+    }
 }
+
 
 /* Medium Devices */
 @media (min-width: 768px) and (max-width: 991px){
     body{
         margin-top: 110px!important;
     }
-
 
     .navbar a img{
         width: 45px !important;
@@ -716,9 +563,8 @@ footer p {
     .home-title{
         font-size: 45px;
     }
-
-
 }
+
 
 @media (max-width: 991px) {
     .collapse.navbar-collapse ul.navbar-nav .nav-link {
@@ -749,8 +595,6 @@ footer p {
         padding: 0 !important;
     }
 
-
-
     .row.content h2{
         font-size: 25px;
     }
@@ -768,8 +612,9 @@ footer p {
         border-color: rgba(79, 64, 64, 1); 
         border-width: 0.35vw;
     }
-
 }
+
+
 
 @media (max-width: 1199px){
     .slide{
@@ -813,8 +658,8 @@ footer p {
     .home-title{
         font-size: 50px;
     }
-
 }
+
 
 
 /* 2 Extra Large Devices */
@@ -827,5 +672,3 @@ footer p {
         font-size: 25px;
     }
 }
-
-

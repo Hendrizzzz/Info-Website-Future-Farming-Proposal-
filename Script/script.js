@@ -241,8 +241,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
   var backToTopButton = document.getElementById('backToTopBtn');
 
