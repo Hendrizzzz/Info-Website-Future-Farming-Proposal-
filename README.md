@@ -1,7 +1,7 @@
 # Greenhouse Technology Website
 
 ## Description
-As the final project for CS 121, We have developed a website dedicated to greenhouse farming technology. The Greenhouse Technology Hub serves as an informative platform for individuals interested in learning about the greenhouse technology.
+As the final project for CS 121, We have developed an info-website dedicated to the future farming proposal (greenhouse farming technology). The Greenhouse Technology Hub serves as an informative platform for individuals interested in learning about the greenhouse technology.
 
 ## Features
 - Detailed information about greenhouse technology
