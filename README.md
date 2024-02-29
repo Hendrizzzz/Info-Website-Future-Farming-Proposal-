@@ -17,7 +17,7 @@ As the final project for CS 121, We have developed an info-website dedicated to 
 - Typed.js
 
 ## Demo
-The website is deployed and accessible at: [Greenhouse Technology Website](https://hendrizzzz.github.io/Info-Website-Future-Farming-/)
+The website is deployed and accessible at: [Greenhouse Technology Website](https://hendrizzzz.github.io/Info-Website-Future-Farming-Proposal-/)
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/your-username/greenhouse-technology-hub.git`.
